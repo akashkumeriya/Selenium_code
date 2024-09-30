@@ -1,0 +1,26 @@
+package my_new_project;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+public class read_data_from_properties_file {
+	
+	public static void main(String [] args) throws IOException
+	{
+		
+		Properties p = new Properties();									
+		FileReader reader = new FileReader("C:\\Users\\hp\\eclipse-workspace\\my_new_project\\src\\test\\java\\my_new_project\\data.properties");									
+		p.load(reader);									
+											
+		String ur = p.getProperty("url");									
+		String email = p.getProperty("email");									
+		String pass = p.getProperty("password");									
+											
+		System.out.println(ur);									
+		System.out.println(email);									
+		System.out.println(pass);									
+		
+		
+	}
+
+}
