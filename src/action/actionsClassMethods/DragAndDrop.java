@@ -15,22 +15,20 @@ public class DragAndDrop {
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		driver.get("file:///C:/Users/HP/Desktop/newseleniumbatch/dragdrop.html");
+
+		Actions act=new Actions(driver);				
+				
+		driver.get("http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html");				
+						
+		driver.manage().window().maximize();				
+						
+		WebElement roam =driver.findElement(By.id("box6"));				
+						
+		WebElement italy= driver.findElement(By.xpath("//*[@id=\"box106\"]"));				
+						
+		act.dragAndDrop(roam, italy).perform();				
+						
+		Thread.sleep(2000);				
 		
-	
-		WebElement source = driver.findElement(By.id("draggable-2"));
-		WebElement target = driver.findElement(By.id("droppable-2"));
-		
-		Actions act = new Actions(driver);
-		act.dragAndDrop(source, target).perform();;
-		
-		
-		
-		
-		
-		
-		
-		
-	
 	}
 }
