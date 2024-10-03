@@ -15,25 +15,20 @@ public class DoubleClickops {
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		driver.get("http://laptop-smc8hiai/login.do");
-	
 		
-		driver.findElement(By.name("username")).sendKeys("admin");
-		driver.findElement(By.name("pwd")).sendKeys("manager");
-		driver.findElement(By.id("loginButton")).click();
+		driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick3");				
 		
-		
-		
-		driver.findElement(By.linkText("Settings")).click();
-	
-		driver.findElement(By.linkText("Logo & Color Scheme")).click();
-		
-		driver.findElement(By.id("uploadNewLogoOption")).click();
-		
-        WebElement target = driver.findElement(By.name("formCustomInterfaceLogo.logo"));
-		
-		Actions act = new Actions(driver);
-		act.doubleClick(target).perform();
+		driver.manage().window().maximize();				
+						
+		driver.switchTo().frame("iframeResult");				
+						
+		WebElement button1 =driver.findElement(By.xpath("/html/body/button"));				
+						
+		Actions act=new Actions(driver);				
+						
+		// double click action--------------				
+						
+		act.doubleClick(button1).perform();		
 		
 	}
 
