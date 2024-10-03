@@ -16,11 +16,19 @@ public class MouseHoverAction {
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("https://www.bluestone.com/");
-		WebElement target = driver.findElement(By.xpath("//a[.='Pendants ']"));
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");			
 		
-		Actions act = new Actions(driver);
-		act.moveToElement(target).perform();//mouseHover
+		driver.manage().window().maximize();			
+					
+		Thread.sleep(3000);			
+					
+		WebElement button= driver.findElement(By.id("mousehover"));			
+					
+		Actions act = new Actions(driver);			
+					
+		act.moveToElement(button).perform();	
+		
+		driver.quit();
 	}
 
 }
