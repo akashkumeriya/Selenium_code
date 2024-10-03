@@ -16,11 +16,13 @@ public class RightClick {
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("https://www.bluestone.com/");
-		WebElement target = driver.findElement(By.xpath("//span[contains(.,'Locate')]"));
+		driver.get("http://swisnl.github.io/jQuery-contextMenu/demo.html");					
 		
-		Actions act = new Actions(driver);
-		act.contextClick(target).perform();//right click 
+		WebElement button = driver.findElement(By.xpath("/html/body/div/section/div/div/div/p/span[1]"));					
+							
+		Actions act = new Actions(driver);					
+							
+		act.contextClick(button).perform();	
 	}
 
 }
